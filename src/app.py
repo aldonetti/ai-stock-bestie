@@ -12,6 +12,7 @@ import config as cfg
 import constants
 import data_fetcher
 import indicators
+import investment_ui
 import llm_insights
 import ui_components
 
@@ -424,6 +425,22 @@ def main() -> None:
 
     ui_components.inject_custom_css()
 
+    # --- Mode selector (top of sidebar) ---
+    with st.sidebar:
+        app_mode = st.radio(
+            "App Mode",
+            options=["📈 Real-Time", "📊 Investment"],
+            horizontal=True,
+            label_visibility="collapsed",
+            key="app_mode",
+        )
+        st.markdown("---")
+
+    if app_mode == "📊 Investment":
+        investment_ui.render_investment_tab()
+        return
+
+    # --- Real-Time mode (existing code below) ---
     with st.sidebar:
         st.markdown("### Configuration")
         st.markdown("---")
