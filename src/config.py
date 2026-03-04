@@ -31,3 +31,21 @@ LLM_MAX_TOKENS: Final[int] = 350
 LLM_CACHE_DURATION: Final[int] = 60
 
 MARKET_OPEN_TIME: Final[str] = "09:30:00"
+
+# --- Investment Mode ---
+INVESTMENT_DB_PATH: Final[str] = "data/investment.db"
+
+DEFAULT_WATCHLIST: Final[list] = ["AAPL", "MSFT", "NVDA", "GOOGL", "AMZN"]
+DEFAULT_INVESTMENT_PERIOD: Final[str] = "1Y"
+INVESTMENT_PERIODS: Final[list] = ["3M", "6M", "1Y", "2Y", "5Y"]
+
+# LLM providers
+LLM_PROVIDER_OLLAMA: Final[str] = "Ollama (local)"
+LLM_PROVIDER_OPENAI: Final[str] = "OpenAI"
+LLM_PROVIDER_ANTHROPIC: Final[str] = "Anthropic"
+LLM_PROVIDERS: Final[list] = [LLM_PROVIDER_OLLAMA, LLM_PROVIDER_OPENAI, LLM_PROVIDER_ANTHROPIC]
+
+OPENAI_DEFAULT_MODEL: Final[str] = "gpt-4o-mini"
+ANTHROPIC_DEFAULT_MODEL: Final[str] = "claude-3-haiku-20240307"
+
+LLM_INVESTMENT_CACHE_HOURS: Final[int] = 24
